@@ -2,7 +2,29 @@
 
 body {
     font-family: 'Mukta', sans-serif;
+
 }
+
+#traffic-hourly {
+  background-color: white;
+  border-style: none;
+}
+
+#traffic-daily {
+  background-color: white;
+  border-style: none;
+}
+
+#traffic-weekly {
+  background-color: white;
+  border-style: none;
+}
+
+#traffic-monthly {
+  background-color: white;
+  border-style: none;
+}
+
 
 header {
     text-align: center;
@@ -69,11 +91,11 @@ h5 {
   color: white;
 }
 
-.dashboard {
+/*.dashboard {
     display: grid;
-    /*grid-template-columns: repeat(2, 2fr);*/
+    /*grid-template-columns: repeat(2, 2fr);
     grid-gap: 5px;
-}
+} */
 
 .section {
     border: 0.5px solid lightgray;
@@ -139,6 +161,11 @@ h5 {
     width: 20px;
     height: 20px;
 }
+
+.st0:hover {
+  fill: black;
+}
+
 /*             */
 textarea {
     width: 90%;
@@ -146,6 +173,14 @@ textarea {
     margin: 10px;
     background-color: #e8eeef;
 }
+
+input[type="search"] {
+  width: 90%;
+  border-radius: 3px;
+  margin: 10px;
+  background-color: #e8eeef;
+}
+
 
 
 input[type="text"] {
@@ -279,19 +314,26 @@ label {
 @media (min-width: 768px) {
 
 }
-*/
+*****************************************************************************************/
 
 @media (min-width: 1024px) {
 
   
-  .dashboard {
-    grid-template-columns: 10vw 1fr 1fr;
+  #grid {
+    display: grid;
+    grid-template-columns: 0.17fr 1fr 1fr;
+    grid-gap: 5px;
+
   }
+  
+
+
+
+
 
   header {
     height: 100px;
   }
-
 
   ul li {
     text-align: left;
@@ -304,27 +346,38 @@ label {
   }
 
   #alert {
-
     text-align: left;
-    width: 90%;
-  }
+    grid-column-start: 2;
+    grid-column-end: 4; 
+    font-size: 18px;
+    }
+
+ul #alerting.li {
+  display: inline;
+}
 
   #exit {
-    float: right; 
-
+    text-align: right; 
+    margin-left: 650px;
+    font-size: 18px;
   }
 
   .side-menu {
     height: 100%;
     grid-row-start: 1;
     grid-row-end: 5;
-
+    top: 0;
+    bottom: 0;
   }
 
   #traffic {
-
+    width: 100%; 
     grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: 4; 
+}
+
+#main-header {
+  width: 400px;
 }
 
   #dailytraffic {
@@ -341,7 +394,7 @@ label {
 
 #socialstats {
   grid-column-start: 2;
-  grid-column-end: 4; 
+  grid-column-end: 5; 
 }
 
 
@@ -382,6 +435,11 @@ textarea {
   height: 150px;
 }
 
+input[type='search'] {
+  width: 150px;
+}
+
+
 input[type="text"] {
 
   height: 40px;
@@ -398,6 +456,11 @@ input[type="text"] {
 
 #propic {
   padding-top: 15px;
+}
+
+#dashy {
+  
+  display: inline-block;
 }
 
 
