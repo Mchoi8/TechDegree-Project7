@@ -4,6 +4,12 @@ const alert = document.getElementById('alert');
 const sender = document.getElementById('send');
 const textarea = document.getElementsByTagName('textarea');
 const searchName = document.getElementsByTagName('searchName');
+const text_area = document.getElementById('textarea');
+const searchMessage = document.getElementById('searchName');
+const hourly = document.getElementById('traffic-hourly');
+const daily = document.getElementById('traffic-daily');
+const weekly = document.getElementById('traffic-weekly');
+const monthly = document.getElementById('traffic-monthly');
 
 
 //Traffic 
@@ -12,7 +18,7 @@ var ctx = document.getElementById('theChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
+        labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10'],
         datasets: [{
             label: '# of Votes',
             data: [5, 19, 13, 15, 2, 13, 3, 4],
@@ -27,8 +33,8 @@ var myChart = new Chart(ctx, {
                 'lightblue'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+                'rgb(134, 163, 255)',
+                'rgb(134, 163, 255)',
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
@@ -64,21 +70,14 @@ var myChart = new Chart(ctx, {
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgb(134, 163, 255)',
+                'rgb(134, 163, 255)',
+                'rgb(134, 163, 255)',
+                'rgb(134, 163, 255)',
+                'rgb(134, 163, 255)',
+                'rgb(134, 163, 255)'
             ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
+
             borderWidth: 1
         }]
     },
@@ -100,12 +99,11 @@ var ctx = document.getElementById('aChart');
 var myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+        labels: ["Phones", "Tablets", "Desktop"],
         datasets: [
           {
-            label: "Population (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-            data: [2478,5267,734,784,433]
+            backgroundColor: ["#3e95cd", "rgb(134, 163, 255)","#3cba9f"],
+            data: [2478,5267,784]
           }
         ]
       },
@@ -126,6 +124,221 @@ alert_button.addEventListener('click', (e) => {
 
 
 sender.addEventListener('click', (e) => {
-    alert("This is the text area user input", textarea.value);
+   // console.log('BUTTON IS CLICKED BUT IT DISAPPEARS', searchMessage.value)
+
+
+    if(text_area.value === "" && searchMessage.value === "" ) {
+        alert('Please enter the required fields.');
+    }
+
+
+});
+
+
+hourly.addEventListener('click', (e) => {
+
+    daily.style.backgroundColor = 'white';
+    weekly.style.backgroundColor = 'white';
+    monthly.style.backgroundColor = 'white';
+
+    hourly.style.backgroundColor = 'lightgreen';
+
+    var ctx = document.getElementById('theChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10'],
+            datasets: [{
+                label: '# of Votes',
+                data: [15, 19, 12, 10, 22, 13, 3, 7],
+                backgroundColor: [
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue', 
+                    'lightblue', 
+                    'lightblue'
+                ],
+                borderColor: [
+                    'rgb(134, 163, 255)',
+                    'rgb(134, 163, 255)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+});
+
+daily.addEventListener('click', (e) => {
+
+    hourly.style.backgroundColor = 'white';
+    weekly.style.backgroundColor = 'white';
+    monthly.style.backgroundColor = 'white';
+
+    daily.style.backgroundColor = 'lightgreen';
+
+    var ctx = document.getElementById('theChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10'],
+            datasets: [{
+                label: '# of Votes',
+                data: [25, 19, 13, 15, 12, 13, 9, 14],
+                backgroundColor: [
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue', 
+                    'lightblue', 
+                    'lightblue'
+                ],
+                borderColor: [
+                    'rgb(134, 163, 255)',
+                    'rgb(134, 163, 255)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+});
+
+weekly.addEventListener('click', (e) => {
+
+    hourly.style.backgroundColor = 'white';
+    daily.style.backgroundColor = 'white';
+    monthly.style.backgroundColor = 'white';
+
+    weekly.style.backgroundColor = 'lightgreen';
+
+    var ctx = document.getElementById('theChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10'],
+            datasets: [{
+                label: '# of Votes',
+                data: [5, 9, 13, 15, 20, 23, 23, 14],
+                backgroundColor: [
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue', 
+                    'lightblue', 
+                    'lightblue'
+                ],
+                borderColor: [
+                    'rgb(134, 163, 255)',
+                    'rgb(134, 163, 255)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+});
+
+monthly.addEventListener('click', (e) => {
+
+    hourly.style.backgroundColor = 'white';
+    daily.style.backgroundColor = 'white';
+    weekly.style.backgroundColor = 'white';
+
+    monthly.style.backgroundColor = 'lightgreen';
+
+    var ctx = document.getElementById('theChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26', '27-3', '4-10'],
+            datasets: [{
+                label: '# of Votes',
+                data: [8, 15, 10, 15, 12, 8, 4, 6],
+                backgroundColor: [
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue',
+                    'lightblue', 
+                    'lightblue', 
+                    'lightblue'
+                ],
+                borderColor: [
+                    'rgb(134, 163, 255)',
+                    'rgb(134, 163, 255)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 
 });
