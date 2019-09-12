@@ -1,6 +1,6 @@
 
 const alert_button = document.getElementById('exit');
-const alert = document.getElementById('alert');
+const alerting = document.getElementById('alert');
 const sender = document.getElementById('send');
 const textarea = document.getElementsByTagName('textarea');
 const searchName = document.getElementsByTagName('searchName');
@@ -118,7 +118,7 @@ var myChart = new Chart(ctx, {
 
 
 alert_button.addEventListener('click', (e) => {
-    alert.style.display = 'none';
+    alerting.style.display = 'none';
 });
 
 
@@ -126,9 +126,12 @@ alert_button.addEventListener('click', (e) => {
 sender.addEventListener('click', (e) => {
    // console.log('BUTTON IS CLICKED BUT IT DISAPPEARS', searchMessage.value)
 
-
-    if(text_area.value === "" && searchMessage.value === "" ) {
+    if(text_area.value === "" || searchMessage.value === "" ) {
         alert('Please enter the required fields.');
+    } else {
+        alert('Message Sent!');
+        text_area.value = "";
+        searchMessage.value = "";
     }
 
 
