@@ -24,7 +24,7 @@
                   c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
               </g>
             </g>
-            </svg> 
+            </svg> <div id='circle'></div>
         </li>
 
 
@@ -133,12 +133,13 @@
             </section>
 
 
+
             <div class='section' id='alert'> 
                 
-              <ul id='alerting'>
-                <li><h3 id='alertTitle'>Alert</h3> </li>
-                <li><button type='button' id='exit'>X</button> </li>
-              </ul>
+              <div>
+                Alert
+                <button type='button' id='exit'>X</button> 
+              </div>
 
             </div>
 
@@ -155,7 +156,7 @@
               </div>
               <div class="widget-container-full">
               <!-- element line graph will attach to -->
-              <canvas id="theChart" width="80" height="80"></canvas>
+              <canvas id="theChart" width="80" height="25"></canvas>
               </div>
               </section>
 
@@ -163,13 +164,13 @@
 
             <div class='section' id='dailytraffic'>
               <h3>Daily Traffic</h3>
-              <canvas id="myChart" width="100" height="100"></canvas>
+              <canvas id="myChart" width="60" height="40"></canvas>
 
             </div>
 
             <div class='section' id='mobileusers'>
               <h3>Mobile Users</h3>
-              <canvas id="aChart" width="100" height="100"></canvas>
+              <canvas id="aChart" width="80" height="50"></canvas>
 
 
             </div>
@@ -247,22 +248,22 @@
             <div class='section' id='newmembers'>
               <h3>New Members</h3>
 
-              <ul class=members>
+              <ul class=memberss>
                   <li><img src='images/member-4.jpg' alt='profile-4' class='pic'> Dale Byrd </li>
+                  <li class='date'>10/15/15</li>
                   <li><a href='mailto:dale.byrd52@example.com'>dale.byrd52@example.com</a> </li>
-                  <li>10/15/15</li>
                   <hr>
                   <li><img src='images/member-3.jpg' alt='profile-3' class='pic'> Victoria Chambers </li>
+                  <li class='dat'>10/15/15</li>
                   <li><a href='mailto:victoria.chambers80@example.com'>victoria.chambers80@example.com</a></li>
-                  <li>10/15/15</li>
                   <hr>
                   <li><img src='images/member-2.jpg' alt='profile-2' class='pic'> Dan Oliver </li>
+                  <li class='dae'>10/15/15</li>
                   <li><a href='mailto:dan.oliver82@example.com'>dan.oliver82@example.com</a> </li>
-                  <li>10/15/15</li>
                   <hr>
                   <li><img src='images/member-1.jpg' alt='profile-1' class='pic'> Dawn Wood </li> 
+                  <li class='d'>10/15/15</li>
                   <li><a href='mailto:dawn.wood16@example.com'>dawn.wood16@example.com</a> </li>
-                  <li>10/15/15</li>
                   <hr>
                 </ul>
 
@@ -273,7 +274,7 @@
                 <h3>Recent Activity</h3>
       
               <ul class=members>
-                <li><img src='images/member-4.jpg' alt='profile-4' class='pic'> Dale Byrd likes the post on Facebook's Changes in 2016. </li>
+                <li><img src='images/member-4.jpg' alt='profile-4' class='pic'> <p class='recent'>Dale Byrd likes the post on Facebook's Changes in 2016.</p></li>
                 <li>4 hours ago</li>
                 <hr>
                 <li><img src='images/member-3.jpg' alt='profile-3' class='pic'> Victoria Chambers commented on YourApp's SEO tips.  </li>
@@ -299,11 +300,9 @@
 
                   <textarea id='textarea' rows="5" cols="35" placeholder="Message for User"></textarea>
 
-                  <button type="submit" id='send'>Send</button>
+                  <button type="button" id='send'>Send</button>
 
               </form>
-
-
 
             </div>
 
